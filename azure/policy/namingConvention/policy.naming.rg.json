@@ -60,6 +60,7 @@
                     "description": "Use 2 characters to abbreviate the Azure location (e.g., 'we' for west, 'so' for south, 'no' for north.",
                     "displayName": "Data Center Location Abbreviation"
                 },
+                "defaultValue": "so",
                 "allowedValues": [
                     "ea",
                     "e2",
@@ -124,11 +125,11 @@
                 "allOf": [
                     {
                         "field": "name",
-                        "notMatch": "[concat('rg-', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment')]"
+                        "notMatch": "[concat('rg-', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment'))]"
                     },
                     {
                         "field": "name",
-                        "notMatch": "[concat('rg-', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment'), '-', '#']"
+                        "notMatch": "[concat('rg', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment'), '-', '#')]"
                     },
                     {
                         "field": "type",
