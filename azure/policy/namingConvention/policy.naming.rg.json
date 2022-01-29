@@ -1,0 +1,140 @@
+{
+    "properties": {
+        "mode": "All",
+        "displayName": "NamingStandard_VirtualMachine_Deny",
+        "description": "This policy governs the naming standard for virtual machines and should be assigned at the resource group scope.  The naming scheme is 'vm + app name / abbreviation + location + environment + app tier + ordinal'.  Each component of the naming scheme has a maximum allowed character length: resource type = 2, app name / abbreviation = 6, country = 2, region = 2, environment = 1, app tier = 1, ordinal = 1.  This scheme exhausts the max allowed characters (15) for a virtual machine name.",
+        "metadata": {
+            "category": "Governance"
+        },
+        "parameters": {
+            "Application": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 1 - 6 characters for the application name or abbreviation",
+                    "displayName": "Application Name or Abbreviation"
+                },
+                "defaultValue": "lekman",
+            },
+            "Environment": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 2 characters for the environment abbreviation: 'de' = Dev, 'pr' = Production, 'qa' = Stage/AM/QA, & 'te' = Test ",
+                    "displayName": "Environment Abbreviation"
+                },
+                "defaultValue": "de",
+                "allowedValues": [
+                    "de",
+                    "te",
+                    "pr",
+                    "qa",
+                    "te"
+                ]
+            },
+            "DataCenterRegion": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 2 characters to abbreviate the Azure region (e.g., 'gl' for Global, 'us' for United States, 'eu' for Europe, 'as' for Asia, 'ap' for Asia Pacific or 'uk' for United Kingdom).",
+                    "displayName": "Data Center Region Abbreviation"
+                },
+                "defaultValue": "uk",
+                "allowedValues": [
+                    "af",
+                    "as",
+                    "ap",
+                    "au",
+                    "br",
+                    "ca",
+                    "eu",
+                    "gl",
+                    "in",
+                    "jp",
+                    "ua",
+                    "uk",
+                    "us",
+                    "za"
+                ]
+            },
+            "DataCenterLocation": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 2 characters to abbreviate the Azure location (e.g., 'we' for west, 'so' for south, 'no' for north.",
+                    "displayName": "Data Center Location Abbreviation"
+                },
+                "allowedValues": [
+                    "ea",
+                    "e2",
+                    "e3",
+                    "ce",
+                    "c2",
+                    "dc",
+                    "de",
+                    "ga",
+                    "gt",
+                    "gv",
+                    "no",
+                    "n2",
+                    "nc",
+                    "ne",
+                    "so",
+                    "sc",
+                    "se",
+                    "we",
+                    "w2",
+                    "w3",
+                    "wc"
+                ]
+            },
+            "WebTier": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 1 character to abbreviate the web or presentation tier: 'p' = Presentation & 'w' = Web",
+                    "displayName": "Web Tier Abbreviation"
+                },
+                "defaultValue": "w",
+                "allowedValues": [
+                    "w",
+                    "p"
+                ]
+            },
+            "LogicTier": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 1 character to abbreviate the business logic tier:  'l' = Logic.",
+                    "displayName": "Logic Tier Abbreviation"
+                },
+                "defaultValue": "l",
+                "allowedValues": [
+                    "l"
+                ]
+            },
+            "DataTier": {
+                "type": "String",
+                "metadata": {
+                    "description": "Use 1 character to abbreviate the database tier: 'd' = Database.",
+                    "displayName": "Data Tier Abbreviation"
+                },
+                "defaultValue": "d",
+                "allowedValues": [
+                    "d"
+                ]
+            }
+        },
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "name",
+                        "notMatch": "[concat('rg-', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment')]"
+                    },
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Resources/resourceGroups"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
+    }
+}
