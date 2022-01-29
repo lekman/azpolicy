@@ -4,59 +4,44 @@
         "metadata": {
             "description": "Use 1 - 6 characters for the application name or abbreviation",
             "displayName": "Application Name or Abbreviation"
-        }
+        },
+        "defaultValue": "lekman",
     },
     "Environment": {
         "type": "String",
         "metadata": {
-            "description": "Use 1 character for the environment abbreviation: 'd' = Dev, 'p' = Production, 's' = Stage, & 't' = Test ",
+            "description": "Use 2 characters for the environment abbreviation: 'de' = Dev, 'pr' = Production, 'qa' = Stage/AM/QA, & 'te' = Test ",
             "displayName": "Environment Abbreviation"
         },
+        "defaultValue": "de",
         "allowedValues": [
-            "d",
-            "p",
-            "s",
-            "t"
+            "de",
+            "te",
+            "pr",
+            "qa",
+            "te"
         ]
     },
-    "DataCenterCountry": {
+    "DataCenterRegion": {
         "type": "String",
         "metadata": {
-            "description": "Use 2 characters to abbreviate the Azure country (e.g., 'us' for United States or 'ca' for Canada).",
-            "displayName": "Data Center Country Abbreviation"
+            "description": "Use 2 characters to abbreviate the Azure region (e.g., 'gl' for Global, 'us' for United States, 'eu' for Europe, 'as' for Asia, 'ap' for Asia Pacific or 'uk' for United Kingdom).",
+            "displayName": "Data Center Region Abbreviation"
         },
-        "defaultValue": "us",
+        "defaultValue": "uk",
         "allowedValues": [
-            "ae",
-            "at",
+            "af",
+            "as",
+            "ap",
             "au",
             "br",
             "ca",
-            "ch",
-            "cl",
-            "cn",
-            "de",
-            "dk",
-            "es",
-            "fr",
-            "gb",
-            "gr",
-            "hk",
-            "ie",
-            "il",
+            "eu",
+            "gl",
             "in",
-            "it",
             "jp",
-            "kr",
-            "mx",
-            "nl",
-            "no",
-            "nz",
-            "pl",
-            "qa",
-            "se",
-            "sg",
-            "tw",
+            "ua",
+            "uk",
             "us",
             "za"
         ]
@@ -64,28 +49,28 @@
     "DataCenterLocation": {
         "type": "String",
         "metadata": {
-            "description": "Use 1 - 2 characters to abbreviate the Azure location (e.g., 'e' for East US or 'e2' for East US 2).",
+            "description": "Use 2 characters to abbreviate the Azure location (e.g., 'we' for west, 'so' for south, 'no' for north.",
             "displayName": "Data Center Location Abbreviation"
         },
         "allowedValues": [
-            "e",
+            "ea",
             "e2",
             "e3",
-            "c",
+            "ce",
             "c2",
             "dc",
             "de",
             "ga",
             "gt",
             "gv",
-            "n",
+            "no",
             "n2",
             "nc",
             "ne",
-            "s",
+            "so",
             "sc",
             "se",
-            "w",
+            "we",
             "w2",
             "w3",
             "wc"
