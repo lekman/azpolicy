@@ -124,6 +124,10 @@
                 "allOf": [
                     {
                         "field": "name",
+                        "notMatch": "[concat('vm', parameters('Application'), parameters('DataCenterRegion'), parameters('DataCenterLocation'), parameters('Environment')]"
+                    },
+                    {
+                        "field": "name",
                         "notMatch": "[concat('vm', parameters('Application'), parameters('DataCenterRegion'), parameters('DataCenterLocation'), parameters('Environment'), parameters('WebTier'), '#')]"
                     },
                     {
