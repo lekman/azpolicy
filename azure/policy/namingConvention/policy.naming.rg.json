@@ -84,40 +84,6 @@
                     "w3",
                     "wc"
                 ]
-            },
-            "WebTier": {
-                "type": "String",
-                "metadata": {
-                    "description": "Use 1 character to abbreviate the web or presentation tier: 'p' = Presentation & 'w' = Web",
-                    "displayName": "Web Tier Abbreviation"
-                },
-                "defaultValue": "w",
-                "allowedValues": [
-                    "w",
-                    "p"
-                ]
-            },
-            "LogicTier": {
-                "type": "String",
-                "metadata": {
-                    "description": "Use 1 character to abbreviate the business logic tier:  'l' = Logic.",
-                    "displayName": "Logic Tier Abbreviation"
-                },
-                "defaultValue": "l",
-                "allowedValues": [
-                    "l"
-                ]
-            },
-            "DataTier": {
-                "type": "String",
-                "metadata": {
-                    "description": "Use 1 character to abbreviate the database tier: 'd' = Database.",
-                    "displayName": "Data Tier Abbreviation"
-                },
-                "defaultValue": "d",
-                "allowedValues": [
-                    "d"
-                ]
             }
         },
         "policyRule": {
