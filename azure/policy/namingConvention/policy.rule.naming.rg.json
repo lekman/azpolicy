@@ -1,0 +1,21 @@
+{
+    "if": {
+        "allOf": [
+            {
+                "field": "name",
+                "notMatch": "[concat('rg-', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment')]"
+            },
+            {
+                "field": "name",
+                "notMatch": "[concat('rg-', parameters('Application'), '-', parameters('DataCenterRegion'), parameters('DataCenterLocation'), '-', parameters('Environment'), '-', '#']"
+            },
+            {
+                "field": "type",
+                "equals": "Microsoft.Resources/resourceGroups"
+            }
+        ]
+    },
+    "then": {
+        "effect": "deny"
+    }
+}
