@@ -12,4 +12,4 @@ Enforce naming standard as rg-<app name / abbreviation>-<region>-<environment>.
 
 Deploy to management group scope or subcription scope.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2Flekman%2Fazpolicy%2Fmain%2Fazure%2Fpolicy%2FnamingConvention%2Fpolicy.naming.rg.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2Flekman%2Fazpolicy%2Fmain%2Fazure%2Fpolicy%2FnamingConvention%2Fpolicy.naming.resourceGroups.json)
