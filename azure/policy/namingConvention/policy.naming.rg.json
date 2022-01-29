@@ -13,7 +13,7 @@
                     "description": "Use 1 - 6 characters for the application name or abbreviation",
                     "displayName": "Application Name or Abbreviation"
                 },
-                "defaultValue": "lekman",
+                "defaultValue": "lekman"
             },
             "Environment": {
                 "type": "String",
